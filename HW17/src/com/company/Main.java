@@ -20,9 +20,18 @@ public class Main {
         System.out.println(myArrayList.toString());
         System.out.println(myArrayList.contains(7));
         System.out.println(myArrayList.contains(999));
-        myArrayList.clear();
         System.out.println(myArrayList.toString());
         System.out.println(myArrayList.size());
+        myArrayList.fill(5);
+        System.out.println(myArrayList);
+        int[]arr = new int[4];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        arr[3] = 4;
+        myArrayList.concat(arr);
+        System.out.println(myArrayList);
 
+        myArrayList.clear();
     }
 }

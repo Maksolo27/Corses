@@ -22,7 +22,7 @@ public class MyArrayList {
         return list[index];
     }
     public int[] add(int index, int element){
-        while (size == list.length || index > list.length) {
+        if (size == list.length || index > list.length) {
             int[] newlist = new int[size + index + 1];
             System.arraycopy(list, 0, newlist, 0, list.length);
             list = newlist;
@@ -90,4 +90,19 @@ public class MyArrayList {
         }
         return list;
     }
+    public int[] fill(int element){
+        for (int i = 0; i < list.length; i++) {
+            list[i] = element;
+        }
+        return list;
+    }
+    public int[] concat(int[] mylist){
+        int len = this.list.length + mylist.length;
+        int[] newlist = new int[len];
+        System.arraycopy(list, 0 , newlist,0, list.length - 1);
+        System.arraycopy(mylist, 0, newlist, list.length, mylist.length);
+        list = newlist;
+        return list;
+    }
+
 }
