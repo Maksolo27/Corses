@@ -6,9 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Teacher> teachers = new ArrayList<>();
-        Teacher samoylenko = new Teacher("Samoylenko", "Galina");
-        Teacher mironchenko = new Teacher("Mironchenko", "Marina");
-        Teacher kovalchuk = new Teacher("Kovalchuk", "Larisa");
+        Teacher samoylenko = new Teacher("Ivanova", "Galina");
+        Teacher mironchenko = new Teacher("Melnyk", "Marina");
+        Teacher kovalchuk = new Teacher("Honcharenko", "Larisa");
 
         teachers.add(kovalchuk);
         teachers.add(mironchenko);
