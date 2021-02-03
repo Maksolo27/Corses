@@ -1,13 +1,14 @@
 package com.company;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Worker[] workers = new Worker[3];
+        Worker[] workers = new Worker[2];
         for (int i = 0; i < workers.length; i++) {
             Worker worker = new Worker();
             System.out.println("Введите имя: ");
@@ -24,16 +25,20 @@ public class Main {
             System.out.println("------");
             workers[i] = (worker);
         }
+        String[] names = new String[workers.length];
         for (int i = 0; i < workers.length; i++) {
-            System.out.println(workers[i].toString());
+            names[i] = workers[i].getName();
         }
+        Arrays.sort(names);
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Введите стаж работы: ");
         int standing = scanner1.nextInt();
-        for (int i = 0; i < workers.length; i++) {
+        for (int i = 0; i < names.length; i++) {
             int experience = 2021 - workers[i].getYear();
             if(standing <= experience){
-                System.out.println(workers[i]);
+                for (Worker j : workers) {
+                    j.soup(names[i]);
+                }
             }
         }
     }
