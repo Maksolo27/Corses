@@ -5,13 +5,26 @@ public class Worker{
     private String position;
     private int year;
 
+    public Worker(String name, String position, int year) {
+        this.name = name;
+        this.position = position;
+        this.year = year;
+    }
+    public Worker(){
+
+    }
+
     @Override
     public String toString() {
-        return "Worker{" +
-                "name='" + name + '\'' +
-                ", position='" + position + '\'' +
-                ", year=" + year +
-                '}';
+        return
+                "Имя: '" + name + '\'' +
+                ", Должность:'" + position + '\'' +
+                ", Год вступления на должность: " + year;
+    }
+    public void soup(String name){
+        if(name.equals(this.name)){
+            System.out.println(new Worker(this.name,this.position,this.year));
+        }
     }
 
     public String getName() {
