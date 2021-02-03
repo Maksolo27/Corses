@@ -34,10 +34,17 @@ public class Main {
         System.out.println("Введите название магазина");
         Scanner scanner = new Scanner(System.in);
         String changedShop = scanner.nextLine();
-        for (int i = 0; i < prices.length; i++) {
-            if(prices[i].getShop().equals(changedShop)){
-                System.out.println(prices[i].toString());
+
+        try {for (int i = 0; i < prices.length; i++) {
+                if(prices[i].getShop().equals(changedShop)){
+                    System.out.println(prices[i].toString());
+                }
+                else {
+                    throw new Exception("Такого магазина не существует");
+                }
             }
+        }catch (Exception e){
+            System.out.println("Ошибка! Такого магазина не существует");
         }
 
 
