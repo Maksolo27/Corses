@@ -76,10 +76,8 @@ class Age {
         GregorianCalendar ageCallendar = new GregorianCalendar();
         ageCallendar.setTime(ageDate);
         int resultYear = ageCallendar.get(Calendar.YEAR) - 1970;
-        System.out.println(resultYear);
         int resultMonth = ageCallendar.get(Calendar.MONTH);
-        int leapYears = resultYear / 4;
-        int resultDay = ageCallendar.get(Calendar.DAY_OF_MONTH) - leapYears;
+        int resultDay = ageCallendar.get(Calendar.DAY_OF_YEAR) - resultMonth * 31;
         System.out.println("Вам " + resultYear + " лет " + resultMonth + " месяцев " + resultDay + " дней");
 
     }
