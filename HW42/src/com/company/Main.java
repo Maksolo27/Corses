@@ -27,7 +27,7 @@ public class Main {
         }
         String replacedText = readText.replaceAll(readText,matchedText);  //Заменяю на новый текст
         reader.close();
-        file.delete();               //Удаляю файл и создаю новый, чтобы заменеть текст
+        file.delete();               //Удаляю файл и создаю новый, чтобы заменить текст
         file = new File("C:\\Users\\maxim\\IdeaProjects\\HW42\\src\\text.txt");
         PrintWriter writer = new PrintWriter(new FileWriter(file, true));
         writer.println(replacedText);
