@@ -1,8 +1,6 @@
 package com.company;
 
 import java.io.*;
-import java.util.Formatter;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,22 +12,22 @@ public class Main {
         String text = "";
         String temp;
         while ( (temp = br.readLine()) != null) {
-            text += temp;
+            text += temp;   //Считываю файл
         }
-        String[] array = text.split(" ");
+        String[] array = text.split(" ");   //Разбиваю текст по словам в массив
         String result = "";
         for (int i = 0; i < array.length; i++) {
             String regex = "\\w{4}";
             Pattern p = Pattern.compile(regex);
             Matcher m = p.matcher(array[i]);
             if(m.matches()){
-                array[i] = "Java ";
+                array[i] = "Java ";     //Заменяю слова с длинной в 4 символа
             }
-            result += array[i] + " ";
+            result += array[i] + " "; //Добавляю пробел к каждому слову
         }
-        String res = text.replaceAll(text,result);
+        String res = text.replaceAll(text,result);  //Заменяю на новый текст
         br.close();
-        file.delete();
+        file.delete();               //Удаляю файл и создаю новый, чтобы заполнить замененным текстом
         file = new File("C:\\Users\\maxim\\IdeaProjects\\HW42\\src\\text.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(file, true));
         pw.println(res);
