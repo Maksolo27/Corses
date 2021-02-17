@@ -15,19 +15,19 @@ public class Main {
             readText += temp;   //Считываю файл
         }
         String[] array = readText.split(" ");   //Превращаю текст в массив
-        String matchedText = "";
+        String javaText = "";
+        String[] prepositions = {"in", "inside", "at", "on", "behind", "between", "beside", "near", "against","under","across", "round", "by", "above", "over", "at", "on", "for", "after", "before", "into", "from", "up", "down", "across" };
         for (int i = 0; i < array.length; i++) {
-            String regex = "\\w{4}";
-            Pattern p = Pattern.compile(regex);
-            Matcher m = p.matcher(array[i]);
-            if(m.matches()){
-                array[i] = "Java";     //Заменяю слова с длинной в 4 символа
+            for (int j = 0; j < prepositions.length; j++) {
+                if(array[i].equals(prepositions[j])){
+                    array[i] = "Java";     //Заменяю предоги
+                }
             }
-            matchedText += array[i] + " "; //Добавляю пробел к каждому слову
+            javaText += array[i] + " ";//Добавляю пробел к каждому слову
         }
-        String replacedText = readText.replaceAll(readText,matchedText);  //Заменяю на новый текст
+        String replacedText = readText.replaceAll(readText,javaText);  //Заменяю на новый текст
         reader.close();
-        file.delete();               //Удаляю файл и создаю новый, чтобы заменить текст
+        file.delete();               //Удаляю файл и создаю новый, чтобы заменеть текст
         file = new File("C:\\Users\\maxim\\IdeaProjects\\HW42\\src\\text.txt");
         PrintWriter writer = new PrintWriter(new FileWriter(file, true));
         writer.println(replacedText);
