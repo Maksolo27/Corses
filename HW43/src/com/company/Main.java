@@ -8,10 +8,15 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите дату: ");
-        String date = reader.readLine(); //Строка не только с числами и спец.символами
+        String date = null; //Строка не только с числами и спец.символами
+        try {
+            date = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String[] array = date.split(""); //Массив с числами и спец.символами
         String number = ""; //Строка только с числами
         for (int i = 0; i < array.length; i++) {
